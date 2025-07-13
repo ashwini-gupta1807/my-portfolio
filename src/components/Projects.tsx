@@ -9,7 +9,7 @@ const Projects = () => {
     tech: ["React.js", "Node.js", "MongoDB", "AWS EC2", "Flutter"],
     features: ["AI Prompt Creation & Sharing", "Community Voting & Feedback", "Collaborative Prompt Refinement", "Prompt Effectiveness Analytics", "Interactive Comments & Discussion"],
     demoUrl: "https://riverxplore.in",
-    githubUrl: "https://github.com/ashwini/riverxplore",
+    githubUrl: "https://github.com/ashwini-gupta1807/riverxplore",
     category: "Web Application",
     status: "Live",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"

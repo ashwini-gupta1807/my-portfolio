@@ -61,13 +61,13 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex gap-6 justify-center lg:justify-start">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
+              <a href="https://www.linkedin.com/in/ashwini-gupta1807/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
+              <a href="https://github.com/ashwini-gupta1807" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="mailto:ashwini@example.com" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
+              <a href="mailto:ashwinigupta8052653693@gmail.com" className="p-3 rounded-full bg-glass-bg backdrop-blur-md border border-glass-border hover:bg-primary/20 transition-all duration-300 hover:shadow-glow">
                 <Mail className="w-6 h-6" />
               </a>
             </div>

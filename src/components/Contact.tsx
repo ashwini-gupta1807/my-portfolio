@@ -44,8 +44,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "ashwini.gupta@example.com",
-      link: "mailto:ashwini.gupta@example.com"
+      value: "ashwinigupta8052653693@gmail.com",
+      link: "mailto:ashwinigupta8052653693@gmail.com"
     },
     {
       icon: Phone,
@@ -65,19 +65,19 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/ashwini-gupta",
+      url: "https://www.linkedin.com/in/ashwini-gupta1807/",
       color: "text-blue-500"
     },
     {
       icon: Github,
       label: "GitHub", 
-      url: "https://github.com/ashwini-gupta",
+      url: "https://github.com/ashwini-gupta1807",
       color: "text-foreground"
     },
     {
       icon: Mail,
       label: "Email",
-      url: "mailto:ashwini.gupta@example.com",
+      url: "mailto:ashwinigupta8052653693@gmail.com",
       color: "text-red-500"
     }
   ];
