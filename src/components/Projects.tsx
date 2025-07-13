@@ -52,7 +52,7 @@ const Projects = () => {
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      {project.description}
+                      RiverXplore is a collaborative platform where you can create, share, refine, and collaborate on AI prompts. Our community helps improve prompt effectiveness through voting, commenting, and iterative enhancement.
                     </p>
                     
                   </div>
