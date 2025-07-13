@@ -7,7 +7,7 @@ const Projects = () => {
     description: "An AI-powered platform that generates Flutter UI code from design prompts. Features a chat-based interface with image upload capabilities and subscription management.",
     longDescription: "RiverXplore.in is a cutting-edge platform that bridges the gap between design and development. Users can upload design images or describe their UI requirements, and the AI generates clean, production-ready Flutter code. The platform includes user authentication, subscription management, and a sophisticated chat interface for seamless interaction.",
     tech: ["React.js", "Node.js", "MongoDB", "AWS EC2", "Flutter"],
-    features: ["AI-Powered Code Generation", "Chat-based Interface", "Image Upload & Processing", "Subscription System", "Real-time Code Preview"],
+    features: ["AI Prompt Creation & Sharing", "Community Voting & Feedback", "Collaborative Prompt Refinement", "Prompt Effectiveness Analytics", "Interactive Comments & Discussion"],
     demoUrl: "https://riverxplore.in",
     githubUrl: "https://github.com/ashwini/riverxplore",
     category: "Web Application",
