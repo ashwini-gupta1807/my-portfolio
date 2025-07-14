@@ -86,13 +86,9 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="glow" className="flex-1 group" onClick={() => window.open(project.demoUrl, '_blank')}>
+                    <Button variant="glow" className="w-full group" onClick={() => window.open(project.demoUrl, '_blank')}>
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
-                    </Button>
-                    <Button variant="outline" className="flex-1" onClick={() => window.open(project.githubUrl, '_blank')}>
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
                     </Button>
                   </div>
                 </CardContent>
