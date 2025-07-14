@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Mail, Linkedin, Github, MapPin, Phone, Send } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,53 +14,26 @@ const Contact = () => {
     message: ""
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [emailConfig, setEmailConfig] = useState<{
-    publicKey: string;
-    serviceId: string;
-    templateId: string;
-  } | null>(null);
   const { toast } = useToast();
-
-  useEffect(() => {
-    // Fetch EmailJS configuration from server
-    fetch('/api/emailjs-config')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then(config => {
-        console.log('EmailJS config loaded:', config);
-        setEmailConfig(config);
-      })
-      .catch(err => console.error('Failed to fetch EmailJS config:', err));
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
     try {
-      if (!emailConfig) {
-        throw new Error('EmailJS configuration not loaded');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
       }
 
-      // Initialize EmailJS with configuration from server
-      emailjs.init(emailConfig.publicKey);
-      
-      // Send email using EmailJS with configuration from server
-      await emailjs.send(
-        emailConfig.serviceId,
-        emailConfig.templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: "ashwinigupta8052653693@gmail.com"
-        }
-      );
+      const result = await response.json();
       
       toast({
         title: "Message Sent!",
@@ -77,22 +49,11 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Email sending failed:", error);
-      
-      // Check if it's a Gmail API authentication error
-      const errorMessage = error?.text || error?.message || '';
-      if (errorMessage.includes('Gmail_API') && errorMessage.includes('Invalid grant')) {
-        toast({
-          title: "Email Service Temporarily Unavailable",
-          description: "The email service needs to be reconnected. Please reach out to me directly at ashwinigupta8052653693@gmail.com",
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Failed to Send",
-          description: "Something went wrong. Please try again or contact me directly at ashwinigupta8052653693@gmail.com",
-          variant: "destructive",
-        });
-      }
+      toast({
+        title: "Failed to Send",
+        description: "Something went wrong. Please try again or contact me directly at ashwinigupta8052653693@gmail.com",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }

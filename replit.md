@@ -112,5 +112,13 @@ Preferred communication style: Simple, everyday language.
 - **Database Integration**: PostgreSQL with Drizzle ORM
 - **Development Experience**: Hot reloading and fast builds with Vite
 - **Error Handling**: Comprehensive error boundary and logging
-- **Contact Form**: EmailJS integration for contact functionality
+- **Contact Form**: Nodemailer integration for direct email sending
 - **SEO Ready**: Meta tags and semantic HTML structure
+
+### Recent Changes
+- **2025-01-14**: Migrated from EmailJS to Nodemailer for contact form functionality
+  - Replaced client-side EmailJS integration with server-side Nodemailer
+  - Added `/api/contact` endpoint for secure email sending
+  - Configured Gmail SMTP authentication with app password
+  - Updated contact form to use fetch API instead of EmailJS
+  - Removed EmailJS dependency and configuration
