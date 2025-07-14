@@ -31,7 +31,7 @@ const Skills = () => {
     {
       icon: Zap,
       title: "Programming",
-      skills: ["Java", "JavaScript", "TypeScript", "Python"]
+      skills: ["Java", "JavaScript", "TypeScript"]
     }
   ];
 
