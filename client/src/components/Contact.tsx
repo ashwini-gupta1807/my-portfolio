@@ -202,7 +202,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="Your name"
                       required
-                      className="bg-glass-bg border-glass-border"
+                      className="bg-background dark:bg-background text-foreground dark:text-foreground border-input placeholder:text-muted-foreground"
                     />
                   </div>
                   <div>
@@ -216,7 +216,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
                       required
-                      className="bg-glass-bg border-glass-border"
+                      className="bg-background dark:bg-background text-foreground dark:text-foreground border-input placeholder:text-muted-foreground"
                     />
                   </div>
                 </div>
@@ -231,7 +231,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="What's this about?"
                     required
-                    className="bg-glass-bg border-glass-border"
+                    className="bg-background dark:bg-background text-foreground dark:text-foreground border-input placeholder:text-muted-foreground"
                   />
                 </div>
 
@@ -246,7 +246,7 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                     rows={6}
                     required
-                    className="bg-glass-bg border-glass-border resize-none"
+                    className="bg-background dark:bg-background text-foreground dark:text-foreground border-input placeholder:text-muted-foreground resize-none"
                   />
                 </div>
 

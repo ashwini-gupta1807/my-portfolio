@@ -32,35 +32,37 @@ const Hero = () => {
     }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Content */}
-          <div className="space-y-8 animate-fade-up">
-            <div className="space-y-4">
-              <h2 className="text-xl md:text-2xl text-primary font-medium">
+          <div className="space-y-6 lg:space-y-8 animate-fade-up order-2 lg:order-1">
+            <div className="space-y-3 lg:space-y-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-primary font-medium">
                 Hello, I'm
               </h2>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
                 Ashwini Gupta
               </h1>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light">Flutter & Full Stack Developer</h3>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light">
+                Flutter & Full Stack Developer
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0">
                 I build fast, scalable, and delightful digital products with 2.5+ years of experience.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="glow" size="xl" onClick={scrollToProjects} className="group">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 lg:px-0">
+              <Button variant="glow" size="xl" onClick={scrollToProjects} className="group w-full sm:w-auto">
                 Explore My Work
                 <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
-              <Button variant="glass" size="xl" onClick={scrollToAbout}>
+              <Button variant="glass" size="xl" onClick={scrollToAbout} className="w-full sm:w-auto">
                 About Me
               </Button>
               <Button 
                 variant="outline" 
                 size="xl" 
-                className="group"
+                className="group w-full sm:w-auto"
                 asChild
               >
                 <a 
@@ -90,16 +92,16 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative animate-fade-up" style={{
+          <div className="relative animate-fade-up order-1 lg:order-2" style={{
           animationDelay: "0.3s"
         }}>
-            <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
               {/* Glowing background circle */}
               <div className="absolute inset-0 bg-gradient-primary rounded-full animate-glow opacity-20"></div>
               
               {/* Geometric frame */}
-              <div className="absolute inset-8 border-2 border-primary/30 rounded-full"></div>
-              <div className="absolute inset-4 border border-accent-blue/20 rounded-full"></div>
+              <div className="absolute inset-6 sm:inset-8 border-2 border-primary/30 rounded-full"></div>
+              <div className="absolute inset-3 sm:inset-4 border border-accent-blue/20 rounded-full"></div>
               
               {/* Profile image */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/50 shadow-card animate-float">
@@ -107,13 +109,13 @@ const Hero = () => {
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-4 right-8 w-8 h-8 bg-accent-blue rounded-full animate-float" style={{
+              <div className="absolute -top-3 right-6 sm:-top-4 sm:right-8 w-6 h-6 sm:w-8 sm:h-8 bg-accent-blue rounded-full animate-float" style={{
               animationDelay: "1s"
             }}></div>
-              <div className="absolute -bottom-2 left-12 w-6 h-6 bg-accent-red rounded-full animate-float" style={{
+              <div className="absolute -bottom-1 left-8 sm:-bottom-2 sm:left-12 w-5 h-5 sm:w-6 sm:h-6 bg-accent-red rounded-full animate-float" style={{
               animationDelay: "3s"
             }}></div>
-              <div className="absolute top-1/2 -right-4 w-4 h-4 bg-primary rotate-45 animate-float" style={{
+              <div className="absolute top-1/2 -right-3 sm:-right-4 w-3 h-3 sm:w-4 sm:h-4 bg-primary rotate-45 animate-float" style={{
               animationDelay: "5s"
             }}></div>
             </div>
