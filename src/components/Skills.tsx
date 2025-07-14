@@ -6,7 +6,7 @@ const Skills = () => {
     {
       icon: Smartphone,
       title: "Mobile Development",
-      skills: ["Flutter", "Dart", "Firebase", "REST APIs"]
+      skills: ["Flutter", "Firebase", "REST APIs"]
     },
     {
       icon: Globe,
@@ -31,7 +31,7 @@ const Skills = () => {
     {
       icon: Zap,
       title: "Programming",
-      skills: ["Java", "JavaScript"]
+      skills: ["Java", "JavaScript", "Dart"]
     }
   ];
 
