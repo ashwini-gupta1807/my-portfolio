@@ -77,11 +77,22 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Email sending failed:", error);
-      toast({
-        title: "Failed to Send",
-        description: "Something went wrong. Please try again or contact me directly.",
-        variant: "destructive",
-      });
+      
+      // Check if it's a Gmail API authentication error
+      const errorMessage = error?.text || error?.message || '';
+      if (errorMessage.includes('Gmail_API') && errorMessage.includes('Invalid grant')) {
+        toast({
+          title: "Email Service Temporarily Unavailable",
+          description: "The email service needs to be reconnected. Please reach out to me directly at ashwinigupta8052653693@gmail.com",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Failed to Send",
+          description: "Something went wrong. Please try again or contact me directly at ashwinigupta8052653693@gmail.com",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsLoading(false);
     }
