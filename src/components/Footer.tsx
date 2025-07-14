@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© 2024 Ashwini Gupta. All rights reserved.</p>
             <p className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> and lots of coffee
+              Crafted with <Heart className="w-4 h-4 text-red-500 fill-current" /> and dedication
             </p>
           </div>
         </div>
