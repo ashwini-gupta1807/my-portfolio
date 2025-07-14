@@ -1,7 +1,11 @@
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import profileImage from "@/assets/ashwini-profile.png";
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
     if (element) {
@@ -10,6 +14,7 @@ const Hero = () => {
       });
     }
   };
+  
   const scrollToAbout = () => {
     const element = document.getElementById("about");
     if (element) {
@@ -18,21 +23,29 @@ const Hero = () => {
       });
     }
   };
-  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-8 sm:py-16">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent-blue/5"></div>
       
       {/* Floating geometric shapes */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 bg-accent-blue/10 rotate-45 animate-float" style={{
+      <div className="absolute top-20 left-4 sm:left-10 w-12 sm:w-20 h-12 sm:h-20 bg-primary/10 rounded-full animate-float"></div>
+      <div className="absolute bottom-20 right-4 sm:right-10 w-12 sm:w-16 h-12 sm:h-16 bg-accent-blue/10 rotate-45 animate-float" style={{
       animationDelay: "2s"
     }}></div>
-      <div className="absolute top-1/2 left-20 w-12 h-12 bg-accent-red/10 rotate-12 animate-float" style={{
+      <div className="absolute top-1/2 left-8 sm:left-20 w-8 sm:w-12 h-8 sm:h-12 bg-accent-red/10 rotate-12 animate-float" style={{
       animationDelay: "4s"
     }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-8rem)]">
           
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8 animate-fade-up order-2 lg:order-1">
@@ -92,30 +105,57 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="relative animate-fade-up order-1 lg:order-2" style={{
+          <div className="relative animate-fade-up order-1 lg:order-2 mb-8 lg:mb-0" style={{
           animationDelay: "0.3s"
         }}>
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
               {/* Glowing background circle */}
               <div className="absolute inset-0 bg-gradient-primary rounded-full animate-glow opacity-20"></div>
               
               {/* Geometric frame */}
-              <div className="absolute inset-6 sm:inset-8 border-2 border-primary/30 rounded-full"></div>
-              <div className="absolute inset-3 sm:inset-4 border border-accent-blue/20 rounded-full"></div>
+              <div className="absolute inset-4 sm:inset-6 md:inset-8 border-2 border-primary/30 rounded-full"></div>
+              <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-accent-blue/20 rounded-full"></div>
               
               {/* Profile image */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/50 shadow-card animate-float">
-                <img src={profileImage} alt="Ashwini Gupta - Flutter & Full Stack Developer" className="w-full h-full object-cover" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/50 shadow-card animate-float bg-background">
+                {!imageError ? (
+                  <img 
+                    src={profileImage} 
+                    alt="Ashwini Gupta - Flutter & Full Stack Developer" 
+                    className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                      imageLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    onLoad={handleImageLoad}
+                    onError={handleImageError}
+                    loading="eager"
+                    decoding="async"
+                    style={{
+                      minHeight: '100%',
+                      minWidth: '100%'
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                    <User className="w-24 h-24 text-primary" />
+                  </div>
+                )}
+                
+                {/* Loading placeholder */}
+                {!imageLoaded && !imageError && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-primary/10 animate-pulse">
+                    <User className="w-24 h-24 text-primary" />
+                  </div>
+                )}
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-3 right-6 sm:-top-4 sm:right-8 w-6 h-6 sm:w-8 sm:h-8 bg-accent-blue rounded-full animate-float" style={{
+              <div className="absolute -top-2 right-6 sm:-top-3 sm:right-8 md:-top-4 md:right-8 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-accent-blue rounded-full animate-float" style={{
               animationDelay: "1s"
             }}></div>
-              <div className="absolute -bottom-1 left-8 sm:-bottom-2 sm:left-12 w-5 h-5 sm:w-6 sm:h-6 bg-accent-red rounded-full animate-float" style={{
+              <div className="absolute -bottom-1 left-6 sm:-bottom-2 sm:left-8 md:-bottom-2 md:left-12 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-accent-red rounded-full animate-float" style={{
               animationDelay: "3s"
             }}></div>
-              <div className="absolute top-1/2 -right-3 sm:-right-4 w-3 h-3 sm:w-4 sm:h-4 bg-primary rotate-45 animate-float" style={{
+              <div className="absolute top-1/2 -right-2 sm:-right-3 md:-right-4 w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-primary rotate-45 animate-float" style={{
               animationDelay: "5s"
             }}></div>
             </div>
