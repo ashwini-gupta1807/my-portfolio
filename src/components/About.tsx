@@ -1,27 +1,20 @@
 import { Code, Users, Cog, GraduationCap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 const About = () => {
-  const highlights = [
-    {
-      icon: Code,
-      title: "Clean Architecture",
-      description: "Scalable systems with maintainable code"
-    },
-    {
-      icon: Users,
-      title: "Team Collaboration",
-      description: "Working with backend, design & product teams"
-    },
-    {
-      icon: Cog,
-      title: "DevOps & CI/CD",
-      description: "Performance optimization & deployment pipelines"
-    }
-  ];
-
-  return (
-    <section id="about" className="py-20 relative">
+  const highlights = [{
+    icon: Code,
+    title: "Clean Architecture",
+    description: "Scalable systems with maintainable code"
+  }, {
+    icon: Users,
+    title: "Team Collaboration",
+    description: "Working with backend, design & product teams"
+  }, {
+    icon: Cog,
+    title: "DevOps & CI/CD",
+    description: "Performance optimization & deployment pipelines"
+  }];
+  return <section id="about" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -72,16 +65,14 @@ const About = () => {
           </div>
 
           {/* Right Content - Highlights */}
-          <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="space-y-6 animate-fade-up" style={{
+          animationDelay: "0.2s"
+        }}>
             <h3 className="text-2xl font-bold text-foreground mb-8">
               What I Bring to the Table
             </h3>
             
-            {highlights.map((highlight, index) => (
-              <Card 
-                key={index} 
-                className="bg-glass-bg backdrop-blur-md border-glass-border hover:bg-glass-bg/80 transition-all duration-300 hover:shadow-card"
-              >
+            {highlights.map((highlight, index) => <Card key={index} className="bg-glass-bg backdrop-blur-md border-glass-border hover:bg-glass-bg/80 transition-all duration-300 hover:shadow-card">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-full bg-primary/20 shrink-0">
@@ -97,8 +88,7 @@ const About = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 mt-8">
@@ -107,15 +97,13 @@ const About = () => {
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center p-6 rounded-lg bg-accent-blue/10 border border-accent-blue/20">
-                <div className="text-3xl font-bold text-accent-blue mb-2">15+</div>
+                <div className="text-3xl font-bold text-accent-blue mb-2">12+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
