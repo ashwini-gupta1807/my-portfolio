@@ -43,7 +43,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
                 Ashwini Gupta
               </h1>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light">Full Stack Developer</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-light">Flutter & Full Stack Developer</h3>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
                 I build fast, scalable, and delightful digital products with 2.5+ years of experience.
               </p>
