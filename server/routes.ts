@@ -8,8 +8,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       res.json({
         publicKey: process.env.EMAILJS_PUBLIC_KEY,
-        serviceId: process.env.EMAILJS_SERVICE_ID,
-        templateId: process.env.EMAILJS_TEMPLATE_ID
+        serviceId: process.env.EMAILJS_TEMPLATE_ID,
+        templateId: process.env.EMAILJS_SERVICE_ID
       });
     } catch (error) {
       console.error('Error fetching EmailJS config:', error);
