@@ -79,8 +79,7 @@ const Hero = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1VueZXfuSDj7ZpLaE1l9tAE9A3BLkYmej"
-                  download="Ashwini_Gupta_Resume.pdf"
+                  href="https://drive.google.com/file/d/1VueZXfuSDj7ZpLaE1l9tAE9A3BLkYmej/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
