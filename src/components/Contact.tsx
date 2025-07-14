@@ -50,8 +50,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 9876543210",
-      link: "tel:+919876543210"
+      value: "+91 6388882089",
+      link: "tel:+916388882089"
     },
     {
       icon: MapPin,
