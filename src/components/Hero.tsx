@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/ashwini-profile.png";
 const Hero = () => {
@@ -56,6 +56,22 @@ const Hero = () => {
               </Button>
               <Button variant="glass" size="xl" onClick={scrollToAbout}>
                 About Me
+              </Button>
+              <Button 
+                variant="outline" 
+                size="xl" 
+                className="group"
+                asChild
+              >
+                <a 
+                  href="https://drive.google.com/uc?export=download&id=1VueZXfuSDj7ZpLaE1l9tAE9A3BLkYmej"
+                  download="Ashwini_Gupta_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 group-hover:translate-y-1 transition-transform" />
+                  Download Resume
+                </a>
               </Button>
             </div>
 

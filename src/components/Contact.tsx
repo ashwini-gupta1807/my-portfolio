@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,24 +14,52 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+    try {
+      // Initialize EmailJS
+      emailjs.init("YeJS-xOU2z_e0RgAC");
+      
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_alkebqr",
+        "template_i7x8cdh",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "ashwinigupta8052653693@gmail.com"
+        }
+      );
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      toast({
+        title: "Failed to Send",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -226,9 +255,10 @@ const Contact = () => {
                   variant="glow" 
                   size="lg" 
                   className="w-full group"
+                  disabled={isLoading}
                 >
-                  <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Send Message
+                  <Send className={`w-4 h-4 mr-2 transition-transform ${isLoading ? 'animate-spin' : 'group-hover:translate-x-1'}`} />
+                  {isLoading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
