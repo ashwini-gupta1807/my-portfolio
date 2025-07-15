@@ -53,9 +53,9 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© 2024 Ashwini Gupta. All rights reserved.</p>
+            <p>© 2025 Ashwini Gupta. All rights reserved.</p>
             <p className="flex items-center gap-1">
-              Crafted with <Heart className="w-4 h-4 text-red-500 fill-current" /> and dedication
+              Designed and developed with <Heart className="w-3.5 h-3.5 text-primary" /> professional excellence
             </p>
           </div>
         </div>
