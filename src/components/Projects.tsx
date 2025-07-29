@@ -1,19 +1,33 @@
-import { Code, ExternalLink, Sparkles } from "lucide-react";
+import { Code, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 const Projects = () => {
-  const projects = [{
-    title: "RiverXplore.in",
-    description: "An AI-powered platform that generates Flutter UI code from design prompts. Features a chat-based interface with image upload capabilities and subscription management.",
-    longDescription: "RiverXplore.in is a cutting-edge platform that bridges the gap between design and development. Users can upload design images or describe their UI requirements, and the AI generates clean, production-ready Flutter code. The platform includes user authentication, subscription management, and a sophisticated chat interface for seamless interaction.",
-    tech: ["React.js", "Node.js", "MongoDB", "AWS EC2", "Flutter"],
-    features: ["AI Prompt Creation & Sharing", "Community Voting & Feedback", "Collaborative Prompt Refinement", "Prompt Effectiveness Analytics", "Interactive Comments & Discussion"],
-    demoUrl: "https://riverxplore.in",
-    githubUrl: "https://github.com/ashwini-gupta1807/riverxplore",
-    category: "Web Application",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
-  }];
+  const projects = [
+    {
+      title: "FocusMate",
+      description: "A cross-platform Flutter app helping users manage study, sleep, fitness, and nutrition with smart tracking and insights.",
+      longDescription: "Built a comprehensive lifestyle app using Flutter, integrating multiple wellness aspects into one platform. The app helps users track their daily activities, manage workouts, monitor nutrition, and maintain healthy sleep patterns with an intuitive interface.",
+      tech: ["Flutter", "MongoDB", "Node.js", "Express.js"],
+      features: ["Workout Creation & Tracking", "Meal & Weight Tracking", "Study/Sleep Timers", "Calendar Progress Insights", "Cross-platform Support"],
+      demoUrl: "https://focusmate-app.com",
+      githubUrl: "https://github.com/ashwini-gupta1807/focusmate",
+      category: "Mobile App",
+      status: "Live",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop"
+    },
+    {
+      title: "Health Consultation App",
+      description: "A secure healthcare platform enabling chat consultations between patients and healthcare providers.",
+      longDescription: "Built a cross-platform healthcare consultation application using Flutter for the frontend and Node.js with Express.js for the backend. The app provides secure chat-based consultations with healthcare providers.",
+      tech: ["Flutter", "Node.js", "Express.js", "MongoDB"],
+      features: ["Secure Chat Consultations", "Cross-platform Support", "Real-time Messaging", "User Authentication", "Healthcare Provider Profiles"],
+      demoUrl: "https://health-consult-demo.com",
+      githubUrl: "https://github.com/ashwini-gupta1807/health-consult",
+      category: "Healthcare",
+      status: "Live",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+    }
+  ];
   return <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -26,11 +40,11 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => <Card key={index} className="bg-background border-border hover:shadow-card transition-all duration-500 animate-fade-up overflow-hidden group">
-              <div className="grid lg:grid-cols-2 gap-0">
+              <div className="flex flex-col">
                 {/* Project Image */}
-                <div className="relative overflow-hidden h-64 lg:h-auto">
+                <div className="relative overflow-hidden h-48">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent-blue/20 z-10"></div>
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute top-4 left-4 z-20">
@@ -46,13 +60,13 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="mb-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      RiverXplore is a collaborative platform where you can create, share, refine, and collaborate on AI prompts. Our community helps improve prompt effectiveness through voting, commenting, and iterative enhancement.
+                      {project.description}
                     </p>
                     
                   </div>
@@ -72,7 +86,7 @@ const Projects = () => {
                   </div>
 
                   {/* Tech Stack */}
-                  <div className="mb-8">
+                  <div className="mb-4">
                     <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
                       <Code className="w-5 h-5 text-accent-blue" />
                       Tech Stack
@@ -82,14 +96,6 @@ const Projects = () => {
                           {tech}
                         </span>)}
                     </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="glow" className="w-full group" onClick={() => window.open(project.demoUrl, '_blank')}>
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
                   </div>
                 </CardContent>
               </div>
