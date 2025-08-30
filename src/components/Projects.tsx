@@ -4,28 +4,28 @@ import { Card, CardContent } from "../components/ui/card";
 const Projects = () => {
   const projects = [
     {
-      title: "FocusMate",
-      description: "A cross-platform Flutter app helping users manage study, sleep, fitness, and nutrition with smart tracking and insights.",
-      longDescription: "Built a comprehensive lifestyle app using Flutter, integrating multiple wellness aspects into one platform. The app helps users track their daily activities, manage workouts, monitor nutrition, and maintain healthy sleep patterns with an intuitive interface.",
-      tech: ["Flutter", "MongoDB", "Node.js", "Express.js"],
-      features: ["Workout Creation & Tracking", "Meal & Weight Tracking", "Study/Sleep Timers", "Calendar Progress Insights", "Cross-platform Support"],
-      demoUrl: "https://focusmate-app.com",
-      githubUrl: "https://github.com/ashwini-gupta1807/focusmate",
+      title: "Rhythmiq – AI-Powered Fitness App",
+      description: "Building a market-ready fitness app with step tracking, workout logging & AI workout suggestions.",
+      longDescription: "Developing a comprehensive fitness application that combines AI-powered workout suggestions with comprehensive tracking features. The app includes step tracking, workout logging, run tracking, nutrition assistance, gamification elements, and a subscription model for a complete fitness experience.",
+      tech: ["Flutter", "Firebase", "MongoDB", "Node.js", "Express.js", "Google Maps SDK"],
+      features: ["Step Tracking", "Workout Logging", "AI Workout Suggestions", "Run Tracking", "Nutrition Assistant", "Gamification", "Subscription Model"],
+      demoUrl: "https://rhythmiq-app.com",
+      githubUrl: "https://github.com/ashwini-gupta1807/rhythmiq",
       category: "Mobile App",
-      status: "Live",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop"
+      status: "In Progress",
+      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=400&fit=crop"
     },
     {
-      title: "Health Consultation App",
-      description: "A secure healthcare platform enabling chat consultations between patients and healthcare providers.",
-      longDescription: "Built a cross-platform healthcare consultation application using Flutter for the frontend and Node.js with Express.js for the backend. The app provides secure chat-based consultations with healthcare providers.",
-      tech: ["Flutter", "Node.js", "Express.js", "MongoDB"],
-      features: ["Secure Chat Consultations", "Cross-platform Support", "Real-time Messaging", "User Authentication", "Healthcare Provider Profiles"],
-      demoUrl: "https://health-consult-demo.com",
-      githubUrl: "https://github.com/ashwini-gupta1807/health-consult",
-      category: "Healthcare",
-      status: "Live",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+      title: "RiverXplore – Collaborative AI Prompt Engineering Platform",
+      description: "Built a MERN platform for creating, sharing & monetizing AI prompts.",
+      longDescription: "Developed a full-stack platform using React.js with Vite for the frontend and Node.js/Express.js with MongoDB for the backend. The platform enables users to create, share, and monetize AI prompts with collaboration features including voting, comments, and iterative refinement. Includes secure APIs with authentication and role-based access control.",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      features: ["AI Prompt Creation & Sharing", "Collaboration Tools", "Voting System", "Comments & Discussion", "Iterative Refinement", "Secure APIs", "Authentication & Role-based Access", "Responsive UI"],
+      demoUrl: "https://riverxplore.in",
+      githubUrl: "https://github.com/ashwini-gupta1807/riverxplore",
+      category: "Web Application",
+      status: "Not live",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
     }
   ];
   return <section id="projects" className="py-20 relative">
