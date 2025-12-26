@@ -4,6 +4,42 @@ import { Card, CardContent } from "../components/ui/card";
 const Projects = () => {
   const projects = [
     {
+      title: "Thryve – Productivity & Wellness App",
+      description: "Built a comprehensive productivity application enabling users to manage study, sleep, exercise, and nutrition.",
+      longDescription: "Developed a full-featured wellness and productivity app that helps users track multiple aspects of their health and productivity. Features include workout tracking with exercise sessions, meal logging functionality, study timers with progress tracking, sleep timers for better rest management, calendar-based tracking for habits, and detailed analytics dashboards to monitor overall progress.",
+      tech: ["Flutter", "Firebase", "Dart"],
+      features: ["Workout Tracking", "Exercise Sessions", "Meal Logging", "Study Timer", "Sleep Timer", "Calendar-based Tracking", "Analytics Dashboards", "Progress Monitoring"],
+      demoUrl: "",
+      githubUrl: "",
+      category: "Mobile App",
+      status: "Completed",
+      image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop"
+    },
+    {
+      title: "Groupia Lite – Event Planning & Management App",
+      description: "Developed an event planning platform allowing users to act as organisers and guests.",
+      longDescription: "Created a comprehensive event management application with dual roles for organizers and guests. Features include event creation tools, digital invitation system, detailed itineraries, integrated group chat, polling functionality, in-app notifications, and social sharing capabilities via WhatsApp and Facebook for easy event promotion.",
+      tech: ["Flutter", "Firebase", "Dart"],
+      features: ["Event Creation", "Invitations", "Itineraries", "Group Chat", "Polls", "Notifications", "Social Sharing", "Organizer & Guest Roles"],
+      demoUrl: "",
+      githubUrl: "",
+      category: "Mobile App",
+      status: "Completed",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+    },
+    {
+      title: "Smart Pantry – Meal Planning App",
+      description: "Created a meal planning application that suggests recipes based on pantry ingredients.",
+      longDescription: "Built an intelligent meal planning app that leverages the Spoonacular Food API to provide recipe suggestions based on available ingredients. Features include comprehensive pantry management, grocery bill scanning with receipt parsing, multi-item ingredient selection, recipe search and integration, and personalized meal planning recommendations.",
+      tech: ["Flutter", "Spoonacular Food API", "Firebase", "Dart"],
+      features: ["Pantry Management", "Recipe Suggestions", "Grocery Bill Scanning", "Multi-item Selection", "Recipe Integration", "Meal Planning", "Ingredient Tracking"],
+      demoUrl: "",
+      githubUrl: "",
+      category: "Mobile App",
+      status: "Completed",
+      image: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600&h=400&fit=crop"
+    },
+    {
       title: "Rhythmiq – AI-Powered Fitness App",
       description: "Building a market-ready fitness app with step tracking, workout logging & AI workout suggestions.",
       longDescription: "Developing a comprehensive fitness application that combines AI-powered workout suggestions with comprehensive tracking features. The app includes step tracking, workout logging, run tracking, nutrition assistance, gamification elements, and a subscription model for a complete fitness experience.",
@@ -19,12 +55,12 @@ const Projects = () => {
       title: "RiverXplore – Collaborative AI Prompt Engineering Platform",
       description: "Built a MERN platform for creating, sharing & monetizing AI prompts.",
       longDescription: "Developed a full-stack platform using React.js with Vite for the frontend and Node.js/Express.js with MongoDB for the backend. The platform enables users to create, share, and monetize AI prompts with collaboration features including voting, comments, and iterative refinement. Includes secure APIs with authentication and role-based access control.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Vite"],
       features: ["AI Prompt Creation & Sharing", "Collaboration Tools", "Voting System", "Comments & Discussion", "Iterative Refinement", "Secure APIs", "Authentication & Role-based Access", "Responsive UI"],
       demoUrl: "https://riverxplore.in",
       githubUrl: "https://github.com/ashwini-gupta1807/riverxplore",
       category: "Web Application",
-      status: "Not live",
+      status: "Completed",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
     }
   ];
